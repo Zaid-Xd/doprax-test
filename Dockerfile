@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.10
+FROM python:3.9.7-slim-buster
 ENV PYTHONUNBUFFERED=1
 WORKDIR /code
 RUN apt-get install git curl python3-pip ffmpeg -y
