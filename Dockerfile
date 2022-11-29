@@ -2,6 +2,11 @@
 FROM python:3.10
 ENV PYTHONUNBUFFERED=1
 WORKDIR /code
+RUN apt-get install git curl python3-pip ffmpeg -y
+RUN pip3 install -U pip
+RUN python3 -m pip install --upgrade pip
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
 COPY requirements.txt /code/
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 COPY . /code/
